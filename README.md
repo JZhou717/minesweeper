@@ -25,7 +25,8 @@ The tile class will store these fields:
 - int: row_pos, col_pos
   
 The tile class will have these methods:
-- constructor with all fields
+- constructor with position arguments
+- methods to set the bomb and adj_mines fields
 - click: preforms a click on the tile if clicked == false
 - flag: flag = !flag
 - show: if number of exposed mines adjacent to the tile == adj_mines, click on all adjacent tiles
