@@ -1,3 +1,4 @@
+package model;
 /**
 * Represents a single tile in 
 **/

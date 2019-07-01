@@ -1,10 +1,11 @@
+package model;
 /**
 * Represents a game board
 **/
 
 import java.util.*;
 
-class Board {
+public class Board {
   protected final int EASY_SIZE = 8;
   protected final int MED_SIZE = 12;
   protected final int HARD_SIZE = 15;
