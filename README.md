@@ -14,7 +14,30 @@ The goal is to create a minesweeper game designed for PC. The main purpose of wo
   
   
 ## board design
-The board will be a 2d array of Tile objects.
+The board will be a 2d array of Tile objects. The console board should resemble:  
+ _ _ _ _
+|#|#|#|#| 0
+|#|#|#|#| 1
+|#|#|#|#| 2
+|#|#|#|#| 3
+ 0 1 2 3
+ > 3 3
+ 
+ _ _ _ _
+|#|1|_|_| 0
+|1|1|_|_| 1
+|_|_|_|_| 2
+|_|_|_|_| 3
+ 0 1 2 3
+ > 0 0 F
+ 
+  _ _ _ _
+|F|1|_|_| 0
+|1|1|_|_| 1
+|_|_|_|_| 2
+|_|_|_|_| 3
+ 0 1 2 3
+ >Game Won!
   
 ### tile class
 The tile class will store these fields:
@@ -51,11 +74,11 @@ The board class will have these methods:
 board class displays the board upon initialization. After every move, checks if gamed_ended, if not display again.
   
 ### main class
-The main class will create an instance of the board. It will run a loop that takes input for a move then displays the board. The board will be displayed with letters along the bottom, and numbers along the side (like in chess). The input will be formatted such as:  
-- "a1" for click on a1
-- "a1 f" for flag on a1
-- "a1 show" for show surrounding tiles to a1
+The main class will create an instance of the board. It will run a loop that takes input for a move then displays the board. The board will be displayed with numbers along the side and bottom (like in chess). The input will be formatted such as:  
+- "0 1" for click on row 0 col 1
+- "0 1 f" for flag on 0 1
+- "0 1 show" for show surrounding tiles to 0 1
   
   
-  
+## next steps
 Just thought about what happens on the first click in minesweeper. If there is a big bubble spot around the first click, all the tiles with no bombs adjacent are revealed as well as the numbered tiles on the edges of this "bubble". Will have to consider how to code this after initial setup is completed
