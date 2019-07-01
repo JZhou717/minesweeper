@@ -15,29 +15,29 @@ The goal is to create a minesweeper game designed for PC. The main purpose of wo
   
 ## board design
 The board will be a 2d array of Tile objects. The console board should resemble:  
- _ _ _ _
-|#|#|#|#| 0
-|#|#|#|#| 1
-|#|#|#|#| 2
-|#|#|#|#| 3
- 0 1 2 3
- > 3 3
- 
- _ _ _ _
-|#|1|_|_| 0
-|1|1|_|_| 1
-|_|_|_|_| 2
-|_|_|_|_| 3
- 0 1 2 3
- > 0 0 F
- 
-  _ _ _ _
-|F|1|_|_| 0
-|1|1|_|_| 1
-|_|_|_|_| 2
-|_|_|_|_| 3
- 0 1 2 3
- >Game Won!
+ _ _ _ _  
+|#|#|#|#| 0  
+|#|#|#|#| 1  
+|#|#|#|#| 2  
+|#|#|#|#| 3  
+ 0 1 2 3  
+ > 3 3  
+   
+ _ _ _ _  
+|#|1|_|_| 0  
+|1|1|_|_| 1  
+|_|_|_|_| 2  
+|_|_|_|_| 3  
+ 0 1 2 3  
+ > 0 0 F  
+   
+ _ _ _ _  
+|F|1|_|_| 0  
+|1|1|_|_| 1  
+|_|_|_|_| 2  
+|_|_|_|_| 3  
+ 0 1 2 3  
+ >Game Won!  
   
 ### tile class
 The tile class will store these fields:
