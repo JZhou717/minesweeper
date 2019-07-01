@@ -41,6 +41,7 @@ The board class will store these fields:
   
 The board class will have these methods:
 - constructor with int arg for size of board
+- set_bombs: places bombs randomly within the board
 - display: (for part 1 only) prints the board to console
 - click: takes row and col as arguments from main class. Checks to see if that tile is flagged, then if it has already been clicked, then if it is bomb. If none of these, are true, show the number and mark clicked as true on the tile.
 - flag: takes row and col as arugments. Checks to see if that tile is already clicked. If not, call Tile's flag method.
