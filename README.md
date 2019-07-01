@@ -55,3 +55,7 @@ The main class will create an instance of the board. It will run a loop that tak
 - "a1" for click on a1
 - "a1 f" for flag on a1
 - "a1 show" for show surrounding tiles to a1
+  
+  
+  
+Just thought about what happens on the first click in minesweeper. If there is a big bubble spot around the first click, all the tiles with no bombs adjacent are revealed as well as the numbered tiles on the edges of this "bubble". Will have to consider how to code this after initial setup is completed
