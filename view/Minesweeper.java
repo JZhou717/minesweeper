@@ -4,7 +4,22 @@ import java.util.Scanner;
 
 import model.Board;
 
+/*
+ * 
+ * 
+ * Possible idea for an update. I believe in the game, if the number of remaining mines is equal to the number of remaining tiles. All tiles will be flagged and you will win. Shouldn't be hard to code... but there are more important things rn
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
 class Minesweeper {
+	
 	
 	//The board used for this game
 	private static Board board;
@@ -15,9 +30,64 @@ class Minesweeper {
 		in = new Scanner(System.in);
 		
 		read_difficulty();
+		play();
 		
 		
 		in.close();
+	}
+
+	private static void play() {
+		System.out.println("This terminal version is not the intended final projcet. For instructions on how to format moves, please refer to the readme");
+		String line;
+		String[] move;
+		int row, col;
+		while(!board.ended) {
+			line = in.nextLine();
+			move = line.split(" ");
+			if(move.length < 2) {
+				System.out.println("Invalid input");
+			}
+			try {
+				//Three parts to the input, third part is either flag or show... ignoring rubbish. GUI will not be able to have rubbish input
+				if(move.length >= 3) {
+					if(move[2].equalsIgnoreCase("f")) {
+						row = Integer.parseInt(move[0]);
+						col = Integer.parseInt(move[1]);
+						if(row < 0 || row >= board.size || col < 0 || col >= board.size) {
+							throw new IllegalArgumentException();
+						}
+						board.flag(row, col);
+						board.display();
+					}
+					else if(move[2].equalsIgnoreCase("show")) {
+						row = Integer.parseInt(move[0]);
+						col = Integer.parseInt(move[1]);
+						if(row < 0 || row >= board.size || col < 0 || col >= board.size) {
+							throw new IllegalArgumentException();
+						}
+						board.show(row, col);
+						board.display();
+					}
+					else {
+						continue;
+					}
+				}
+				//Click move
+				else {
+					row = Integer.parseInt(move[0]);
+					col = Integer.parseInt(move[1]);
+					if(row < 0 || row >= board.size || col < 0 || col >= board.size) {
+						throw new IllegalArgumentException();
+					}
+					board.click(row, col);
+					board.display();
+				}
+			}
+			catch(IllegalArgumentException e) {
+				System.out.println("Please input a valid row number followed by a valid column number");
+			}
+		}
+		
 	}
 
 	/**
